@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>分析框架 · WES + RNA-seq 共突变</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="index.html">
+        <span class="logo">GC</span>
+        <span class="brand-name">共突变笔记</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="review.html">综述</a>
+        <a href="papers.html">文献表</a>
+        <a class="active" href="pipeline.html">分析框架</a>
+        <a class="btn" href="https://github.com/ddxyl404/gc-comutation-research" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+    <p class="kicker">from papers to pipeline</p>
+    <h1 class="hand">建议的分析框架</h1>
+    <p class="lead">把综述里的结论翻成一套可在自己 WES / RNA-seq 上跑的步骤。目标不是再发一篇“胃癌突变谱”，而是回答：共突变组合如何在原发与淋巴结之间被保留或改写。</p>
+    <section class="section">
+      <h2 class="hand">0. 开始前先盘点样本</h2>
+      <div class="grid-2">
+        <div class="card"><h3>理想设计</h3><ul><li>同一患者：正常对照 + 原发灶 + 至少 1 枚阳性淋巴结</li><li>WES 与 RNA-seq 来自同一块或紧邻切片</li><li>记录 Lauren 分型、部位、pTNM、HER2、EBV、MSI、治疗史</li></ul></div>
+        <div class="card"><h3>常见妥协</h3><ul><li>只有原发 WES + 部分配对淋巴结</li><li>RNA 与 DNA 不是同一区域 → 解释 ASE 时要谨慎</li><li>无正常对照 → 需公共数据库过滤并在局限中写明</li></ul></div>
+      </div>
+      <div class="note">Sundar 的教训：原发若只是黏膜活检，会漏掉深部 / 转移克隆。报告里应标明取样深度。</div>
+    </section>
+    <section class="section">
+      <h2 class="hand">1. WES 基础层</h2>
+      <ol>
+        <li>体细胞 SNV/indel：Mutect2 + Strelka2 交集。</li>
+        <li>拷贝数与纯度 / 倍性：FACETS、ASCAT 或 Sequenza。</li>
+        <li>MSI / TMB：MSIsensor-pro。MSI-high 必须单独做共突变检验。</li>
+        <li>驱动注释：OncoKB / CIViC + 胃癌高频名单（TP53、ARID1A、CDH1、RHOA、PIK3CA、SMAD4、APC、ERBB2 等）。</li>
+        <li>融合候选：CLDN18–ARHGAP 建议用 RNA 复核。</li>
+      </ol>
+    </section>
+    <section class="section">
+      <h2 class="hand">2. 把突变切成三层</h2>
+      <table><thead><tr><th>层</th><th>定义</th><th>含义</th></tr></thead><tbody>
+        <tr><td>Trunk</td><td>两侧都在且 CCF 高</td><td>起始/维持事件</td></tr>
+        <tr><td>Shared-subclonal</td><td>两侧都在但 CCF 低或不对称</td><td>多克隆播种痕迹</td></tr>
+        <tr><td>Primary-private</td><td>仅原发</td><td>未播种侧支或转移后丢失</td></tr>
+        <tr><td>LN-private</td><td>仅淋巴结</td><td>播种后获得，或原发未取到的深部克隆</td></tr>
+      </tbody></table>
+      <p>工具：PyClone-VI / Pairtree 估 CCF；Treeomics / MACHINA 推迁移方向。</p>
+    </section>
+    <section class="section">
+      <h2 class="hand">3. 共突变统计</h2>
+      <p>不要只做全队列 Fisher。用 maftools::somaticInteractions 探索，用 DISCOVER / SelectSim 做负荷校正；至少分层非 MSI。预先检验：TP53×CDH1；CDH1×ARID1A/DDR；CDH1/RHOA×CLDN18-ARHGAP；TP53×ERBB2/CCNE1 扩增。</p>
+    </section>
+    <section class="section">
+      <h2 class="hand">4. RNA-seq 对接</h2>
+      <ol>
+        <li>融合：Arriba / STAR-Fusion</li>
+        <li>ASE：看驱动突变是否被转录</li>
+        <li>差异表达先做纯度校正或解卷积</li>
+        <li>按共突变基因型分组看通路 GSVA</li>
+      </ol>
+    </section>
+    <footer>框架是研究设计建议，参数需按测序深度与肿瘤纯度调整。</footer>
+  </div>
+</body>
+</html>
