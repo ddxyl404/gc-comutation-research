@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>综述 · 胃癌共突变与原发–淋巴转移</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="index.html"><span class="logo">GC</span><span class="brand-name">共突变笔记</span></a>
+      <nav class="nav-links">
+        <a href="index.html">首页</a>
+        <a class="active" href="review.html">综述</a>
+        <a href="papers.html">文献表</a>
+        <a href="pipeline.html">分析框架</a>
+        <a class="btn" href="https://github.com/ddxyl404/gc-comutation-research" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <p class="kicker">literature review</p>
+    <h1 class="hand">胃癌共突变：<br>从分子分型到淋巴转移</h1>
+    <p class="lead">面向拥有 WES / RNA-seq、希望做共突变与原发–淋巴结比较的研究者。文献条目见 <a href="papers.html">文献表</a>。</p>
+
+    <article class="prose section">
+      <h2 class="hand">1. 为什么要做共突变</h2>
+      <p>胃癌的基因组不是单基因故事，而是共改变组合，再加上原发与转移之间的不一致。Pectasides 等在胃食管腺癌中见到：原发与同步转移之间 SNV/indel 不一致约 40%，扩增不一致可到约 60%；据此重新分配治疗的患者达 32%。</p>
+      <p>共突变有三层用途：互斥常提示通路冗余；共享突变定义肿瘤主干；组合突变可能改变免疫表型与药物敏感性。</p>
+    </article>
+
+    <article class="prose section">
+      <h2 class="hand">2. 先分层再谈共突变</h2>
+      <div class="grid-2">
+        <div class="card"><h3>EBV</h3><p>PIK3CA、ARID1A 很常见，TP53 少见，常有 PD-L1/L2 扩增。</p></div>
+        <div class="card"><h3>MSI</h3><p>超突变。共突变检验必须单独做，否则被负荷带偏。</p></div>
+        <div class="card"><h3>GS</h3><p>弥漫型为主。CDH1、RHOA、CLDN18–ARHGAP 是标志。</p></div>
+        <div class="card"><h3>CIN</h3><p>肠型为主。TP53 + ERBB2/CCNE1/FGFR2/KRAS 等扩增。</p></div>
+      </div>
+      <div class="note">实操：至少分成 MSI-high vs 非 MSI；最好再按 CIN-like 与 GS-like 分开。</div>
+    </article>
+
+    <article class="prose section">
+      <h2 class="hand">3. 共现与互斥的主要格局</h2>
+      <p>TP53 是最常见驱动突变，多为克隆性主干。TP53 野生型更常见 MDM2/CDK4 扩增、ARID1A、PIK3CA、CDH1。中国队列中 HiC 富集 TP53、LoC 富集 ARID1A。</p>
+      <p>CDH1 与 TP53 / APC 倾向互斥，与 ARID1A 及 DDR 基因倾向共现；PD-L1 更低，有 PARP / Wee1 敏感线索。CLDN18–ARHGAP 融合与 CDH1 / RHOA 互斥——同一条黏附–RHO 轴只需被打穿一次。</p>
+      <table>
+        <thead><tr><th>组合</th><th>关系</th><th>背景</th></tr></thead>
+        <tbody>
+          <tr><td>TP53 × 拷贝数 / ERBB2 amp</td><td>共现</td><td>CIN / 肠型</td></tr>
+          <tr><td>TP53 × CDH1</td><td>倾向互斥</td><td>肠型 vs 弥漫型</td></tr>
+          <tr><td>CDH1 × ARID1A / DDR</td><td>共现</td><td>弥漫型、TP53-WT</td></tr>
+          <tr><td>CDH1 / RHOA × CLDN18-ARHGAP</td><td>互斥</td><td>GS</td></tr>
+          <tr><td>PIK3CA × EBV / MSI</td><td>共现</td><td>亚型标志</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="prose section">
+      <h2 class="hand">4. 原发灶与淋巴结转移</h2>
+      <p><strong>Lee 2019</strong>（15 对 WES）：突变负荷相当，但 overlap 差异很大。TP53 几乎总是共同突变；原发特异可见 SMARCA4，淋巴结特异可见 CTNNB1。系统发育支持淋巴结来自原发中相对均质的亚克隆。</p>
+      <p><strong>Lee 2020</strong>（10 例、106 个区域）：TP53 多为跨部位的克隆突变。单克隆原发的转移保持相同组成（26/26）；多克隆原发以多克隆播种为主（37/44）。</p>
+      <p><strong>Sundar 2021</strong>：浅表 vs 深部 43% 基因差异表达，深部 vs 淋巴结仅 16%。40% 突变只在深部和/或淋巴结。结论：区域淋巴结转移很可能起源于原发灶深部。只做胃镜黏膜活检会系统低估转移相关改变。</p>
+      <p><strong>Oh 2023</strong>：血行转移更多染色体不稳定和新发扩增；腹膜转移更常保持染色体稳定。血行/腹膜转移的基因组距离有时比淋巴结更接近原发；每一枚淋巴结都可以是相对独立事件。</p>
+    </article>
+
+    <article class="prose section">
+      <h2 class="hand">5. RNA-seq 能补什么</h2>
+      <ol>
+        <li>验证突变是否表达（ASE）。</li>
+        <li>捕捉融合（CLDN18–ARHGAP、FGFR2 等）。</li>
+        <li>把共突变映射到通路活性。</li>
+        <li>解卷积微环境，避免把淋巴结的细胞组成差异当成转移程序。</li>
+      </ol>
+    </article>
+
+    <article class="prose section">
+      <h2 class="hand">6. 尚未闭合的问题</h2>
+      <ul>
+        <li>配对原发–淋巴结的共突变动态仍薄，少有校正纯度与亚型的统计框架。</li>
+        <li>淋巴结是独立播种还是中转站，证据冲突。</li>
+        <li>扩增不一致高于点突变，共扩增如何与共突变一起建模尚不统一。</li>
+        <li>多数配对研究 n 很小（10–15 例）。</li>
+      </ul>
+    </article>
+
+    <article class="prose section">
+      <h2 class="hand">7. 对自身队列的含义</h2>
+      <ol>
+        <li>在非 MSI 样本中重现或修正 TP53–CDH1 互斥、CDH1–ARID1A 共现。</li>
+        <li>把突变分成 trunk / primary-private / LN-private。</li>
+        <li>用 RNA 检查 trunk 突变是否表达、LN-private 是否伴随可解释的转录程序。</li>
+        <li>若有多枚淋巴结，检验“每枚相对独立”还是“来自同一亚克隆”。</li>
+      </ol>
+      <p>具体步骤见 <a href="pipeline.html">分析框架</a>。</p>
+    </article>
+
+    <footer>综述供学习与课题设计，细节请核对原文。</footer>
+  </div>
+</body>
+</html>
