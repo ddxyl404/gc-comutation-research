@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>胃癌共突变研究笔记 · 原发与淋巴转移</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <a class="brand" href="index.html">
+        <span class="logo">GC</span>
+        <span class="brand-name">共突变笔记</span>
+      </a>
+      <nav class="nav-links">
+        <a class="active" href="index.html">首页</a>
+        <a href="review.html">综述</a>
+        <a href="papers.html">文献表</a>
+        <a href="pipeline.html">分析框架</a>
+        <a class="btn" href="https://github.com/ddxyl404/gc-comutation-research" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="kicker">WES · RNA-seq · 原发灶 vs 淋巴结</p>
+        <h1 class="hand">胃癌共突变，<br>从原发走到转移<span class="mark">。</span></h1>
+        <p class="lead">一份面向自己数据的文献综述与工作笔记：整理胃癌驱动基因的共突变 / 互斥格局，聚焦原发灶与淋巴结转移的克隆演化，并给出可落地的 WES + RNA-seq 分析框架。</p>
+        <div class="hero-actions">
+          <a class="btn btn-coral" href="review.html">开始读综述</a>
+          <a class="btn" href="pipeline.html">看分析框架</a>
+        </div>
+        <p class="meta-row">仓库 ddxyl404/gc-comutation-research · 页面风格参考 designprompts.dev/sketch · 更新于 2026-09</p>
+      </div>
+      <aside class="sketch-frame">
+        <div class="sketch-inner">
+          <p class="hand" style="font-size:28px;margin:0 0 8px;">研究问题草图</p>
+          <p style="margin:0 0 10px;color:#5c574e;">同一患者：原发灶 ↔ 淋巴结转移</p>
+          <ol style="margin:0;padding-left:1.2em;">
+            <li>哪些突变是共享主干（trunk）？</li>
+            <li>哪些基因对共现或互斥？</li>
+            <li>转移是单克隆播种还是多克隆播种？</li>
+            <li>RNA 能否解释“有突变却未转移”的克隆？</li>
+          </ol>
+          <div class="chip-row">
+            <span class="chip">TP53</span>
+            <span class="chip">ARID1A</span>
+            <span class="chip">CDH1</span>
+            <span class="chip">PIK3CA</span>
+            <span class="chip">RHOA</span>
+            <span class="chip">ERBB2 amp</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><div><b>4</b><span>TCGA 分子亚型</span></div></div>
+      <div class="stat"><div><b>15+</b><span>配对原发–转移研究</span></div></div>
+      <div class="stat"><div><b>~40%</b><span>原发 vs 转移 SNV 不一致</span></div></div>
+      <div class="stat"><div><b>WES+RNA</b><span>建议的联合策略</span></div></div>
+    </section>
+
+    <section class="section">
+      <p class="kicker">three tracks</p>
+      <h2 class="hand">这本笔记分三条线</h2>
+      <div class="grid-3" style="margin-top:18px;">
+        <a class="card" href="review.html" style="text-decoration:none;">
+          <span class="tag">综述</span>
+          <h3>分子分型与共突变</h3>
+          <p>从 TCGA / ACRG 亚型出发，梳理 TP53–ARID1A–CDH1–RHOA 等驱动基因的共现与互斥，以及它们与淋巴结转移风险的关系。</p>
+        </a>
+        <a class="card" href="papers.html" style="text-decoration:none;">
+          <span class="tag">文献</span>
+          <h3>原发 vs 淋巴转移</h3>
+          <p>汇总配对 WES、多区域测序、空间转录组和单细胞研究，比较克隆播种方式与位点特异突变。</p>
+        </a>
+        <a class="card" href="pipeline.html" style="text-decoration:none;">
+          <span class="tag">方法</span>
+          <h3>你的数据分析框架</h3>
+          <p>把文献结论翻译成可执行步骤：共突变检验、克隆重建、系统发育、RNA 验证与报告模板。</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="kicker">takeaways</p>
+      <h2 class="hand">先记住这五条</h2>
+      <div class="grid-2" style="margin-top:18px;">
+        <div class="card">
+          <h3>1. 胃癌不是一种病</h3>
+          <p>EBV / MSI / GS / CIN 四型的驱动基因、突变负荷和转移偏好不同。共突变必须按亚型分层，否则会把互斥误判成共现。</p>
+        </div>
+        <div class="card">
+          <h3>2. TP53 常是主干</h3>
+          <p>多区域与配对研究里，TP53 突变多为克隆性、原发与转移共享。它更像“已发生”的早期事件，而不是转移特异事件。</p>
+        </div>
+        <div class="card">
+          <h3>3. 互斥里藏着两条路</h3>
+          <p>TP53 与 CDH1 倾向互斥；CDH1 常与 ARID1A / DDR 共现。肠型 CIN 与弥漫型 GS 走的不是同一条分子路径。</p>
+        </div>
+        <div class="card">
+          <h3>4. 淋巴结更像“深部原发”</h3>
+          <p>Sundar 等发现淋巴结转移的转录组和突变更接近原发灶深部，而不是黏膜活检能取到的浅表区域。</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      本站为文献学习笔记，不是诊疗建议。关键结论均指向原始论文，细节以原文为准。
+    </footer>
+  </div>
+</body>
+</html>
