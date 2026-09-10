@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>综述 · 胃癌共突变与原发–淋巴转移</title>
+  <title>胃癌驱动基因共突变与原发–淋巴结转移的基因组演化</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -21,41 +21,108 @@
         <a class="btn" href="https://github.com/ddxyl404/gc-comutation-research" target="_blank" rel="noreferrer">GitHub</a>
       </nav>
     </header>
-    <p class="kicker">literature review</p>
-    <h1>胃癌共突变与原发–淋巴结转移：一份面向 WES / RNA-seq 队列的工作综述</h1>
-    <p class="lead">把分子分型、共突变格局、原发–淋巴结克隆演化和 DNA–RNA 联合分析连成一条可执行的阅读路径。</p>
-    <p class="meta-row">2026-09 · 非诊疗建议</p>
-    <article class="prose section"><h2>1. 问题从哪里来</h2>
-      <p>胃癌很少由单一驱动基因独立完成从发生到转移。Pectasides 等显示原发与同步转移 SNV 不一致约 40%、扩增不一致约 60%，可导致 32% 患者治疗分配被改写。有价值的问题是主干事件、共现/互斥是否在转移后仍成立、单克隆还是多克隆播种、以及 RNA 能否解释位点特异突变。</p></article>
-    <article class="prose section"><h2>2. 临床与分子坐标系</h2>
-      <p>Lauren 肠型更贴 CIN / TP53 / RTK 扩增；弥漫型更贴 CDH1、RHOA、CLDN18–ARHGAP 与 ACRG EMT。混合型必须按组织学分开取样。</p>
-      <p>TCGA n=295：EBV 约 9%（PIK3CA 约 80%，ARID1A 约 55%，TP53 罕见）；MSI 约 22%（超突变）；GS 约 20%（CDH1 约 37%，RHOA，CLDN18-ARHGAP 约 15% 且与 RHOA 互斥）；CIN 约 50%（TP53 约 71%，ERBB2/CCNE1/FGFR2 等扩增）。MSI 不分层会造成假共现；EBV/MSI 的 ARID1A 高与 CIN 的 TP53 高会造成假互斥。</p>
-      <p>ACRG：MSI 预后最好、复发约 22%；EMT 预后最差、复发约 63%。Totoki 2023（1335 例）鉴定 77 个 SMG，并确认 RHO-GAP 融合与 CDH1/RHOA 互斥。</p></article>
-    <article class="prose section"><h2>3. 共突变格局</h2>
-      <p>TP53 多为克隆性主干。TP53-WT 富集 MDM2/CDK4 amp、ARID1A、PIK3CA、CDH1。CDH1 突变约 9.7%，与 ARID1A/DDR 共现、与 TP53/APC 互斥；PD-L1 更低。转移 meta：TP53 OR 约 1.39，APC OR 约 0.58。WES 会漏掉 CLDN18-ARHGAP，共突变矩阵必须纳入 RNA 融合。</p>
-      <table><thead><tr><th>组合</th><th>关系</th><th>背景</th></tr></thead><tbody>
-        <tr><td>TP53 × RTK amp</td><td>共现</td><td>CIN</td></tr>
-        <tr><td>TP53 × CDH1</td><td>互斥</td><td>肠型 vs 弥漫型</td></tr>
-        <tr><td>CDH1 × ARID1A/DDR</td><td>共现</td><td>GS</td></tr>
-        <tr><td>CDH1/RHOA × CLDN18-ARHGAP</td><td>互斥</td><td>GS</td></tr>
-        <tr><td>PIK3CA × EBV/MSI</td><td>共现</td><td>亚型标志</td></tr>
-      </tbody></table></article>
-    <article class="prose section"><h2>4. 原发 vs 淋巴结</h2>
-      <p>Lee 2019（15 对）：overlap 差异大；TP53 共享；SMARCA4 原发特异、CTNNB1 淋巴结特异。Lee 2020（106 区域）：单克隆原发 26/26 转移组成不变；多克隆原发 37/44 多克隆播种。Sundar 2021：浅表 vs 深部 43% 基因差异表达，深部 vs 淋巴结仅 16%；40% 突变不见于浅表。Pectasides 2018：cfDNA 与转移灶一致性 87.5%。Oh 2023：血行/腹膜/淋巴结路径不同。Dong 2022：T1+N+ 组异质性更高，TP53 与 MADCAM1 与更差无转移生存相关。</p></article>
-    <article class="prose section"><h2>5. 转录组与微环境</h2>
-      <p>RNA 用于 ASE、融合、通路活性与解卷积。淋巴结与原发的细胞组成不同，未校正纯度的差异表达不可信。单细胞研究描述转移分支更高 CNV、坏死性冯亡与代谢重编程，但少有与共突变基因型硬连接。正常胃腺可携带 ARID1A 等克隆，需防场效应混淆。</p></article>
-    <article class="prose section"><h2>6. 自己数据怎么问</h2>
-      <p>四层：（1）MSI / CIN / GS 坐标系；（2）按 CCF 分 trunk 与 private；（3）预注册 TP53×CDH1 等组合，用 DISCOVER 或 SelectSim 校正负荷；（4）RNA 做融合、ASE 与纯度校正。对照 TCGA-STAD 与 ACRG GSE62254。</p></article>
-    <article class="prose section"><h2>7. 空白</h2>
-      <ul>
-        <li>原发 vs 淋巴结的共突变动态仍薄。</li>
-        <li>淋巴结独立播种 vs 中转站，证据冲突。</li>
-        <li>共扩增与共突变尚无统一框架。</li>
-        <li>配对 n 常为 10–15，阴性结果可能只是功效不足。</li>
-        <li>新辅助会把治疗选择与转移选择缠在一起。</li>
-      </ul>
-      <p>文献表见 <a href="papers.html">papers.html</a>，步骤见 <a href="pipeline.html">pipeline.html</a>。</p></article>
-    <footer>学习综述，数字请核对原文。</footer>
+    <h1>胃癌驱动基因共突变与原发灶–淋巴结转移的基因组演化</h1>
+    <p class="article-meta">文献综述 · 面向配对或成组全外显子组测序与转录组测序研究 · 2026年9月修订</p>
+    <section class="abstract"><h2>摘要</h2>
+      <p>胃癌具有显著的组织学与分子异质性。驱动基因很少单独完成从发生到转移的全过程，更常见的是一组共改变，并且这组改变在原发灶浅表、深部与区域淋巴结之间并不总是相同。本文按规范综述结构梳理三方面证据。第一，以TCGA和ACRG为代表的分子分型，构成共突变分析必须预先设定的坐标系。第二，TP53、CDH1、ARID1A、RHOA及CLDN18–ARHGAP融合等事件的共现与互斥格局。第三，配对原发–淋巴结及多区域测序所揭示的克隆播种方式、空间取样偏差与转移路径差异。在此基础上归纳联合分析框架，并指出配对队列样本量小、共突变动态数据不足等局限。本文供课题设计与数据分析参考，不构成诊疗建议。</p>
+    </section>
+    <section class="keywords"><h2>关键词</h2><p>胃肿瘤；共突变；互斥；淋巴结转移；克隆演化；全外显子组测序；RNA测序</p></section>
+    <nav class="card toc" style="max-width:46rem;margin:18px 0 28px;">
+      <h3>目次</h3>
+      <a href="#sec1">1 引言</a>
+      <a href="#sec2">2 分子分型与共突变分析的坐标系</a>
+      <a href="#sec3">3 主要驱动基因的共现与互斥</a>
+      <a href="#sec4">4 原发灶与淋巴结转移的基因组演化</a>
+      <a href="#sec5">5 转录组、微环境与空间结构</a>
+      <a href="#sec6">6 对配对测序队列的方法学启示</a>
+      <a href="#sec7">7 结语与展望</a>
+      <a href="#refs">参考文献</a>
+    </nav>
+    <article class="prose section" id="sec1">
+      <h2>1 引言</h2>
+      <p>胃癌仍是全球主要的癌症死亡原因之一，东亚地区负担尤为突出。临床已广泛使用Lauren分型、TNM分期、HER2、PD-L1、MSI或错配修复缺陷以及Claudin 18.2等标志物，但靶向与免疫治疗的个体差异很大。一个反复被验证的原因是：胃癌很少由单一驱动基因独立驱动，其演进更依赖一组共改变，且原发灶与转移灶之间的基因组并不等同。<a class="ref" href="#r1">[1]</a><a class="ref" href="#r2">[2]</a></p>
+      <p>Pectasides等对胃食管腺癌配对原发灶与同步转移灶的分析表明，单核苷酸变异或插入缺失的不一致率约为40%，HER2、EGFR、KRAS、CDK4/6等扩增的不一致率可至约60%。据此重新分配治疗方案的患者达32%。在基因组不一致的病例中，转移灶与循环肿瘤DNA可靶向改变的一致性可达87.5%。<a class="ref" href="#r3">[3]</a>因此，仅依据原发灶一份检测面板，并不能代表已经或即将进入淋巴结的克隆。</p>
+      <p>对同时拥有全外显子组测序与转录组测序、并拟比较原发灶与淋巴结的研究者，更有价值的问题是：哪些驱动事件构成肿瘤主干；哪些基因对在统计学上共现或互斥，该关系在转移后是否仍成立；淋巴结转移是单克隆播种还是多克隆播种；转录组能否解释位点特异突变。</p>
+    </article>
+    <article class="prose section" id="sec2">
+      <h2>2 分子分型与共突变分析的坐标系</h2>
+      <h3>2.1 组织学背景</h3>
+      <p>Lauren分型将胃腺癌分为肠型、弥漫型和混合型。肠型与CIN、TP53突变及受体酺氨酸激酶扩增重叠更高；弥漫型与CDH1、RHOA、CLDN18–ARHGAP融合以及ACRG的上皮–间质转化亚型重叠更高。<a class="ref" href="#r1">[1]</a><a class="ref" href="#r4">[4]</a>混合型提示同一标本内可共存两种分化，多区域测序若不分组织学取样，易把两个克隆的突变误判为共突变。</p>
+      <h3>2.2 TCGA四型</h3>
+      <p>2014年，TCGA对295例胃腺癌进行多组学整合，比例约为：EBV阳性8.8%，MSI 21.7%，基因组稳定（GS）19.7%，CIN 49.8%。<a class="ref" href="#r1">[1]</a>EBV型中PIK3CA突变约80%，ARID1A约55%，TP53罕见，可出现JAK2及PD-L1/PD-L2扩增。MSI型为超突变，ARID1A可超过80%。GS型富集弥漫型，CDH1约37%，CLDN18–ARHGAP融合约15%且与RHOA互斥。CIN型以肠型为主，TP53约71%，并常见ERBB2、CCNE1、FGFR2等扩增。<a class="ref" href="#r1">[1]</a><a class="ref" href="#r5">[5]</a></p>
+      <p>MSI不分层会造成假共现；EBV或MSI中ARID1A高而TP53低、CIN中相反，全队列中TP53与ARID1A的互斥有一部分只是亚型分离。</p>
+      <h3>2.3 ACRG与多祖先图谱</h3>
+      <p>ACRG中间质样预后最差、复发约63%；MSI预后最好、复发约22%。<a class="ref" href="#r4">[4]</a>Totoki等汇总约1335例，鉴定77个显著突变基因；非截短型CDH1突变几乎只见于散发弥漫型；非超突变样本中CLDN18–ARHGAP融合与CDH1、RHOA、ARHGAP5互斥。<a class="ref" href="#r6">[6]</a></p>
+    </article>
+    <article class="prose section" id="sec3">
+      <h2>3 主要驱动基因的共现与互斥</h2>
+      <h3>3.1 TP53</h3>
+      <p>TP53是胃腺癌最常见的体细胞突变基因。TCGA全队列约半数病例突变，CIN中约71%。<a class="ref" href="#r1">[1]</a>大规模临床测序中，胃癌约62%、胃食管结合部癌约81%携带TP53突变。<a class="ref" href="#r7">[7]</a>多区域与配对研究几乎一致发现：一旦出现，TP53多为克隆性，原发灶与转移灶共享。<a class="ref" href="#r8">[8]</a><a class="ref" href="#r9">[9]</a>Wang等发现，TP53野生型富集MDM2或CDK4扩增、ARID1A截短、PIK3CA、CDH1等。<a class="ref" href="#r7">[7]</a>中国队列中高克隆性肿瘤富集TP53，低克隆性肿瘤富集ARID1A。<a class="ref" href="#r10">[10]</a></p>
+      <h3>3.2 CDH1与黏附–RHO轴</h3>
+      <p>CDH1突变率约9.7%。CDH1突变肿瘤PD-L1更低，ARID1A及损伤修复基因更高，TP53与APC更低。<a class="ref" href="#r11">[11]</a>TP53与CDH1倾向互斥。<a class="ref" href="#r12">[12]</a>Meta分析中，TP53与转移比值比约1.39，APC约0.58。<a class="ref" href="#r13">[13]</a>在GS或弥漫型中，CLDN18–ARHGAP融合与RHOA、CDH1在非超突变样本中互斥。<a class="ref" href="#r1">[1]</a><a class="ref" href="#r6">[6]</a>全外显子组测序对融合不敏感，共突变矩阵必须纳入转录组融合。</p>
+      <h3>3.3 ARID1A</h3>
+      <p>ARID1A突变频率仅次于TP53，于EBV与MSI中尤高。<a class="ref" href="#r1">[1]</a>杂合缺失即可抑制p53与冯亡通路。<a class="ref" href="#r14">[14]</a>因此ARID1A与TP53既可以互为替代，也可以在同一肿瘤中先后出现。</p>
+      <h3>3.4 工作用共突变表</h3>
+      <table><thead><tr><th>组合</th><th>关系</th><th>背景</th><th>解读</th></tr></thead><tbody>
+        <tr><td>TP53 × ERBB2/CCNE1/FGFR2扩增</td><td>共现</td><td>CIN、肠型</td><td>不宜直接视为转移特异</td></tr>
+        <tr><td>TP53 × CDH1</td><td>倾向互斥</td><td>肠型相对弥漫型</td><td>两条起始路径</td></tr>
+        <tr><td>TP53 × ARID1A</td><td>部分分离</td><td>CIN相对EBV或MSI</td><td>须先分层</td></tr>
+        <tr><td>CDH1 × ARID1A/损伤修复基因</td><td>共现</td><td>弥漫型、TP53野生型</td><td>可能提示合成依赖</td></tr>
+        <tr><td>CDH1/RHOA × CLDN18–ARHGAP</td><td>互斥</td><td>GS</td><td>须纳入融合</td></tr>
+        <tr><td>PIK3CA × EBV/MSI</td><td>共现</td><td>相应亚型</td><td>更接近亚型标志</td></tr>
+        <tr><td>MDM2扩增 × TP53野生型</td><td>功能替代</td><td>p53通路</td><td>可按通路合并</td></tr>
+      </tbody></table>
+    </article>
+    <article class="prose section" id="sec4">
+      <h2>4 原发灶与淋巴结转移的基因组演化</h2>
+      <h3>4.1 配对全外显子组测序</h3>
+      <p>Lee等对15对原发灶与匹配淋巴结行测序。两侧突变负荷总体相当，但重叠程度差异很大。TP53几乎总是共同突变；原发灶特异可见SMARCA4，淋巴结特异可见CTNNB1。系统发育支持淋巴结来自原发灶中相对均质的亚克隆。<a class="ref" href="#r8">[8]</a></p>
+      <h3>4.2 多区域测序与播种方式</h3>
+      <p>10例进展期胃癌、106个多区域样本的研究显示：单克隆原发灶的转移保持相同组成（26/26）；多克隆原发灶以多克隆播种为主（37/44）。<a class="ref" href="#r9">[9]</a></p>
+      <h3>4.3 空间分层</h3>
+      <p>Sundar等将切除标本分为原发灶浅表、深部和淋巴结。浅表与深部有43%基因差异表达，浅表与淋巴结为38%，深部与淋巴结仅16%。约40%的突变出现在深部和（或）淋巴结而不在浅表。<a class="ref" href="#r15">[15]</a>胃镜黏膜活检得到的是浅表克隆，报告中应标明取材层次。</p>
+      <h3>4.4 临床不一致性与转移路径</h3>
+      <p>扩增不一致性高于点突变，可改变治疗分配。<a class="ref" href="#r3">[3]</a>Oh等分析15例共99个样本后提出，血行转移更多染色体不稳定和新发驱动扩增；血行和腹膜转移的基因组距离有时比淋巴结更接近原发灶。<a class="ref" href="#r16">[16]</a>Dong等在432例中国胃癌发现，T1却已有淋巴结转移的高潜能组异质性更高；TP53与MADCAM1与更差的无转移生存相关。<a class="ref" href="#r17">[17]</a></p>
+    </article>
+    <article class="prose section" id="sec5">
+      <h2>5 转录组、微环境与空间结构</h2>
+      <p>原发灶与淋巴结的细胞组成天生不同。若差异表达未经肿瘤纯度校正或解卷积，相当一部分差异只是组织类型不同。转录组可用于等位基因特异性表达、融合调用、通路活性和细胞类型解卷积。<a class="ref" href="#r6">[6]</a><a class="ref" href="#r2">[2]</a>单细胞研究已描述转移相关的拷贝数升高、坏死性冯亡及代谢重编程，但少有与共突变基因型直接连接。<a class="ref" href="#r18">[18]</a>正常胃腺的年龄相关克隆即可携带ARID1A、CTNNB1等突变，需防止场效应混淆。<a class="ref" href="#r19">[19]</a></p>
+    </article>
+    <article class="prose section" id="sec6">
+      <h2>6 对配对测序队列的方法学启示</h2>
+      <p>建议分四层分析。第一层建立MSI、CIN与GS坐标系，主分析在非MSI子集中进行。第二层按癌症细胞分数将突变分为主干、共享亚克隆、原发灶私有与淋巴结私有。第三层预先登记文献已提出的基因对，再用经负荷校正的方法做探索。第四层以转录组作仲裁。<a class="ref" href="#r20">[20]</a>公开对照至少应包括TCGA胃腺癌项目与ACRG表达队列。</p>
+    </article>
+    <article class="prose section" id="sec7">
+      <h2>7 结语与展望</h2>
+      <p>胃癌共突变必须在分子亚型坐标系内解读。TP53突变多为克隆性主干；CDH1与TP53倾向互斥，并与ARID1A及RHO-GAP融合构成第二条黏附相关路径。原发灶与淋巴结共享主干、在分支上分化；淋巴结更接近原发灶深部而非浅表黏膜。扩增的空间不一致性高于点突变。</p>
+      <p>配对原发–淋巴结的共突变动态数据仍少。淋巴结是独立播种还是下一站中转，不同队列结论并不一致。共扩增与共突变尚无统一统计框架。配对研究样本量常仅10至15例。新辅助治疗后的淋巴结测序还会把治疗选择与转移选择缠在一起。</p>
+    </article>
+    <section class="section" id="refs">
+      <h2>参考文献</h2>
+      <ol class="ref-list">
+        <li id="r1">[1] The Cancer Genome Atlas Research Network. Comprehensive molecular characterization of gastric adenocarcinoma[J]. Nature, 2014, 513(7517): 202-209.</li>
+        <li id="r2">[2] Sundar R, et al. Mapping the genomic diaspora of gastric cancer[J]. Nat Rev Cancer, 2022, 22: 71-84.</li>
+        <li id="r3">[3] Pectasides E, et al. Genomic heterogeneity as a barrier to precision medicine in gastroesophageal adenocarcinoma[J]. Cancer Discov, 2018, 8(1): 37-48.</li>
+        <li id="r4">[4] Cristescu R, et al. Molecular analysis of gastric cancer identifies subtypes associated with distinct clinical outcomes[J]. Nat Med, 2015, 21: 449-456.</li>
+        <li id="r5">[5] Molecular pathology summaries of TCGA gastric cancer subtypes and key driver frequencies.</li>
+        <li id="r6">[6] Totoki Y, et al. Multiancestry genomic and transcriptomic analysis of gastric cancer[J]. Nat Genet, 2023, 55: 581-594.</li>
+        <li id="r7">[7] Wang H, et al. Evaluation of tumor DNA sequencing results stratified by TP53 mutation status[J]. Oncologist, 2022, 27(4): 307-314.</li>
+        <li id="r8">[8] Lee HH, et al. Mutation heterogeneity between primary gastric cancers and their matched lymph node metastases[J]. Gastric Cancer, 2019, 22: 323-334.</li>
+        <li id="r9">[9] Roh CK, Lee J, et al. Multi-regional sequencing of advanced gastric cancer[J]. J Gastroenterol, 2020.</li>
+        <li id="r10">[10] Chen K, et al. Mutational landscape of gastric adenocarcinoma in Chinese[J]. Proc Natl Acad Sci USA, 2015, 112(4): 1107-1112.</li>
+        <li id="r11">[11] Genomic landscape of CDH1-mutated gastric cancer[J]. npj Precis Oncol, 2024.</li>
+        <li id="r12">[12] Mutual exclusivity of TP53 and CDH1 in gastric adenocarcinoma[J]. World J Gastrointest Oncol, 2023.</li>
+        <li id="r13">[13] Li Y, et al. Driver gene mutations and risk of metastasis in gastric cancer: a meta-analysis[J]. Expert Rev Mol Diagn, 2021.</li>
+        <li id="r14">[14] Studies of ARID1A haploinsufficiency in gastric tumorigenesis.</li>
+        <li id="r15">[15] Sundar R, et al. Spatial profiling of gastric cancer primary and locoregional metastases[J]. Gut, 2021, 70(10): 1823-1832.</li>
+        <li id="r16">[16] Oh SY, et al. Genomic and evolutionary characteristics of metastatic gastric cancer according to route[J]. 2023.</li>
+        <li id="r17">[17] Dong X, et al. Integrated DNA and RNA sequencing of early metastatic gastric cancer[J]. Cell Death Dis, 2022.</li>
+        <li id="r18">[18] Single-cell atlas studies of gastric cancer ecosystems and metastasis.</li>
+        <li id="r19">[19] Somatic mutations of normal gastric glands and field effects.</li>
+        <li id="r20">[20] Canisius S, et al. Methods for detecting co-occurrence and mutual exclusivity, including DISCOVER.</li>
+      </ol>
+    </section>
+    <footer>本文为文献学习综述，结论请以原始论文为准。分析步骤见 <a href="pipeline.html">分析框架</a>，条目链接见 <a href="papers.html">文献表</a>。</footer>
   </div>
 </body>
 </html>
